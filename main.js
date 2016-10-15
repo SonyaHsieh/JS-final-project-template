@@ -1,4 +1,4 @@
-var canvas = document.getElementByld("game-canvas");
+var canvas= document.getElementByld("game-canvas");
 var ctx= canvas.getContext("2d");
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
@@ -15,4 +15,4 @@ function draw(){
 //setTimeout(draw, 1000);
 //1000毫秒=1秒
 //每16毫秒執行一次
-setInterval(draw, 16);
+setInterval(draw, 150);
