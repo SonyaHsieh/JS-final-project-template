@@ -16,6 +16,3 @@ function draw(A){
 //1000毫秒=1秒
 //每16毫秒執行一次
 setInterval(draw(bgImg), 16);
-var slimeImg= documnet.createElement("img");
-slimeImg.src= "images/slime.gif;
-setInterval(draw(slimeImg), 16);
