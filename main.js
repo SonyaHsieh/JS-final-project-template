@@ -8,12 +8,18 @@ slimeImg.src= "images/slime.gif";
 var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
 
+var slimeImg={
+  x:96,
+  y:480-32,
+};
+
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(slimeImg,5,5);
+  ctx.drawImage(slimeImg,x,y);
   ctx.drawImage(towerBtn,100,100);
 }
+
 
 //執行draw函式
 //draw();
