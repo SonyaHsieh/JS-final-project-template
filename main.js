@@ -15,4 +15,4 @@ function draw(){
 //setTimeout(draw, 1000);
 //1000毫秒=1秒
 //每16毫秒執行一次
-setInterval(draw, 150);
+setInterval(draw, 16);
