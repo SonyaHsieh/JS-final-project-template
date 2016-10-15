@@ -3,9 +3,9 @@ var ctx= canvas.getContext("2d");
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
 
-function draw(){
+function draw(A){
   //將背景圖片畫在canvas上的(0,0)位置
-  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(A,0,0);
 }
 
 //執行draw函式
@@ -15,6 +15,7 @@ function draw(){
 //setTimeout(draw, 1000);
 //1000毫秒=1秒
 //每16毫秒執行一次
-setInterval(draw, 16);
+setInterval(draw(bgImg), 16);
 var slimeImg= documnet.createElement("img");
 slimeImg.src= "images/slime.gif;
+setInterval(draw(slimeImg), 16);
