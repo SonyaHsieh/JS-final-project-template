@@ -10,5 +10,8 @@ function draw(){
 //執行draw函式
 //draw();
 //等待一秒再執行 draw
-setTimeout(draw, 1000);
+//等待1秒再執行
+//setTimeout(draw, 1000);
 //1000毫秒=1秒
+//每16毫秒執行一次
+setInterval(draw, 16);
