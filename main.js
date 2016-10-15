@@ -12,7 +12,7 @@ function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(slimeImg,5,5);
-  ctx.drawImage(towerBtn,600,600);
+  ctx.drawImage(towerBtn,100,100);
 }
 
 //執行draw函式
