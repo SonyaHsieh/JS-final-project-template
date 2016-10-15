@@ -8,7 +8,7 @@ slimeImg.src= "images/slime.gif";
 var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
 
-var slimeImg={
+var enemy={
   x:96,
   y:480-32,
 };
