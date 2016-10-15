@@ -8,4 +8,7 @@ function draw(){
 }
 
 //執行draw函式
-draw();
+//draw();
+//等待一秒再執行 draw
+setTimeout(draw, 1000);
+//1000毫秒=1秒
