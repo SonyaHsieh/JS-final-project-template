@@ -8,7 +8,7 @@ slimeImg.src= "images/slime.gif";
 var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
 
-var enemy={
+var slimeImg={
   x:96,
   y:480-32,
 };
@@ -16,7 +16,7 @@ var enemy={
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(slimeImg,x,y);
+  ctx.drawImage(slimeImg,slimeImg.x,slimeImg.y);
   ctx.drawImage(towerBtn,100,100);
 }
 
