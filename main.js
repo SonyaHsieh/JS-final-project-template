@@ -5,7 +5,7 @@ bgImg.src= "images/map.png";
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
-  ctx.drawImage(bgImage,0,0);
+  ctx.drawImage(bgImg,0,0);
 }
 
 //執行draw函式
