@@ -17,8 +17,5 @@ function draw(){
 //每16毫秒執行一次
 setInterval(draw, 16);
 var slimeImg= documnet.createElement("img");
-slimeImg.src= "images/slime.gif;
-function drawS(){
-  ctx.drawImage(slimeImg,5,5);
-}
-drawS();
+slimeImg.src= "images/slime.gif";
+draw(slimeImg);
