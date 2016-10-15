@@ -1,11 +1,15 @@
 var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
+
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
+var slimeImg= documnet.createElement("img");
+slimeImg.src= "images/slime.gif";
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(slimeImg,5,5);
 }
 
 //執行draw函式
@@ -16,6 +20,5 @@ function draw(){
 //1000毫秒=1秒
 //每16毫秒執行一次
 setInterval(draw, 16);
-var slimeImg= documnet.createElement("img");
-slimeImg.src= "images/slime.gif";
-draw(slimeImg);
+
+
