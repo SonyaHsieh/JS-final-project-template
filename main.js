@@ -3,7 +3,7 @@ var ctx= canvas.getContext("2d");
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
-var slimeImg= documnet.createElement("img");
+var slimeImg= document.createElement("img");
 slimeImg.src= "images/slime.gif";
 
 function draw(){
