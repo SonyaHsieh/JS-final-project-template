@@ -3,12 +3,12 @@ var ctx= canvas.getContext("2d");
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
-var slimeImg= document.createElement("img");
-slimeImg.src= "images/slime.gif";
+var slime= document.createElement("img");
+slime.src= "images/slime.gif";
 var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
 
-var slimeImg={
+var slime={
   x:96,
   y:480-32,
 };
@@ -16,7 +16,7 @@ var slimeImg={
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(slimeImg,slimeImg.x,slimeImg.y);
+  ctx.drawImage(slime,slime.x,slime.y);
   ctx.drawImage(towerBtn,100,100);
 }
 
