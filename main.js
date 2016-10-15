@@ -3,9 +3,9 @@ var ctx= canvas.getContext("2d");
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
 
-function draw(A){
+function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
-  ctx.drawImage(A,0,0);
+  ctx.drawImage(bgImage,0,0);
 }
 
 //執行draw函式
@@ -15,4 +15,4 @@ function draw(A){
 //setTimeout(draw, 1000);
 //1000毫秒=1秒
 //每16毫秒執行一次
-setInterval(draw(bgImg), 16);
+setInterval(draw, 16);
