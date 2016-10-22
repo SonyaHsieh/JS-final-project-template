@@ -23,6 +23,14 @@ function draw(){
   ctx.drawImage(towerImg,cursor.x,cursor,y);
 }
 
+//取得滑鼠游標位置
+$("$#game-canvas").on("mousemove", function(event){
+  cursor={
+    x:event.offsetX,
+    y:event.offsetY
+  };
+});
+
 
 //執行draw函式
 //draw();
@@ -32,12 +40,4 @@ function draw(){
 //1000毫秒=1秒
 //每16毫秒執行一次
 setInterval(draw, 16);
-
-//取得滑鼠游標位置
-$("$#game-canvas").on("mousemove", function(event){
-  cursor={
-    x:event.offsetX,
-    y:event.offsetY
-  };
-});
 
