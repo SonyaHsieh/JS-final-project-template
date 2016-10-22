@@ -23,7 +23,7 @@ function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,slime.x,slime.y);
-  ctx.drawImage(towerBtn,btn.x,btn.y,21,21);
+  ctx.drawImage(towerBtn,btn.x,btn.y,30,30);
   ctx.drawImage(towerImg,cursor.x,cursor.y);
 }
 
