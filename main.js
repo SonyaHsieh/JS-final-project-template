@@ -7,6 +7,8 @@ var slimeImg= document.createElement("img");
 slimeImg.src= "images/slime.gif";
 var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
+var towerImg = document.createElement("img");
+towerImg.src= "images/tower.png";
 
 var slime={
   x:96,
@@ -15,9 +17,10 @@ var slime={
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
-  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(bgImg,0,0,600,480);
   ctx.drawImage(slimeImg,slime.x,slime.y);
   ctx.drawImage(towerBtn,100,100);
+  ctx.drawImage(towerImg,cursor.x,cursor,y);
 }
 
 
@@ -30,4 +33,11 @@ function draw(){
 //每16毫秒執行一次
 setInterval(draw, 16);
 
+//取得滑鼠游標位置
+$("$#game-canvas").on("mousemove", function(event){
+  cursor={
+    x:event.offsetX,
+    y:event.offsetY
+  };
+});
 
