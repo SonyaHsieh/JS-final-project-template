@@ -20,7 +20,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0,600,480);
   ctx.drawImage(slimeImg,slime.x,slime.y);
   ctx.drawImage(towerBtn,100,100);
-  ctx.drawImage(towerImg,cursor.x,cursor,y);
+  ctx.drawImage(towerImg,cursor.x,cursor.y);
 }
 
 //取得滑鼠游標位置
