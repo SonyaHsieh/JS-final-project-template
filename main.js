@@ -24,7 +24,7 @@ function draw(){
 }
 
 //取得滑鼠游標位置
-var cursor= {x:0, y:0;}
+var cursor= {x:0, y:0};
 $("#game-canvas").on("mousemove", function(event){
   cursor={
     x:event.offsetX,
