@@ -54,7 +54,7 @@ $("#game-canvas").on("click", function(){
         isBuilding=true;
       }
   }
-
+}
 
 //執行draw函式
 //draw();
