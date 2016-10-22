@@ -14,16 +14,13 @@ var slime={
   x:96,
   y:480-32,
 };
-var btn={
-  x:580,
-  y:430,
-};
+
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,slime.x,slime.y);
-  ctx.drawImage(towerBtn,btn.x,btn.y,45,45);
+  ctx.drawImage(towerBtn,580,430,50,50);
   ctx.drawImage(towerImg,cursor.x,cursor.y);
 }
 
