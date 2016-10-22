@@ -20,7 +20,7 @@ function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,slime.x,slime.y);
-  ctx.drawImage(towerBtn,580,450,50,50);
+  ctx.drawImage(towerBtn,575,425,55,55);
   ctx.drawImage(towerImg,cursor.x,cursor.y);
 }
 
@@ -46,7 +46,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
   }
 }
 $("#game-canvas").on("click", function(){
-  if(isCollided(cursor.x, cursor.y, 580,450,50,50) ){
+  if(isCollided(cursor.x, cursor.y, 575,425,55,55) ){
     if(isBuilding){
       isBuilding=false;
     }
