@@ -33,7 +33,28 @@ $("#game-canvas").on("mousemove", function(event){
   };
 });
 //製造城堡
-var 
+var isBuilding=false;
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
+  if(   pointX>=targetX
+     && pointX<=targetX+targetWidth
+     && pointY>=targetY
+     && pointY<=targetY+targetHeight
+     ){
+    return true;
+  }else{
+    return false;
+  }
+}
+$("#game-canvas").on("click", function(){
+  if(isCollided(cursor.x, cursor.y, 580,450,50,50) ){
+    if(isBuilding){
+      isBuilding=false;
+    }
+      else{
+        isBuilding=true;
+      }
+  }
+
 
 //執行draw函式
 //draw();
