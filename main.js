@@ -35,7 +35,7 @@ $("#game-canvas").on("mousemove", function(event){
     y:event.offsetY
   };
 });
-//製造城堡
+//製造城堡&畫塔
 var isBuilding=false;
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
   if(   pointX>=targetX
@@ -59,8 +59,8 @@ $("#game-canvas").on("click", function(){
   }
   }
   else if(isBuilding){
-  tower.x=cursor.x;
-  tower.y=cursor.y;
+  tower.x=cursor.x-cursor.x%32;
+  tower.y=cursor.y-cursor.y%32;
   isBuilding=false;
   }
 });
