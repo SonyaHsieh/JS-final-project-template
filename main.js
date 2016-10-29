@@ -59,7 +59,6 @@ $("#game-canvas").on("click", function(){
   tower.x=cursor.X
   tower.y=cursor.Y
   }
-  );
   }
 });
 
