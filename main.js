@@ -23,6 +23,7 @@ function draw(){
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
+  ctx.drawImage(towerImg,tower.x,tower.y);
   }
 }
 
