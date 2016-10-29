@@ -19,7 +19,7 @@ var enemy={
   speed:64,
   move:function(){
     this.x=this.x+speed
-    this.y=this.y+speed
+    this.y=this.y-speed
   }
 };
 
