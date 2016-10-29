@@ -11,13 +11,14 @@ towerBtn.src="images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src= "images/tower.png";
 
+//敵人的移動
 var enemy={
   x:96,
   y:480-32,
   speed:0,//每秒移動多少pixel
   speed:64,
   move: function(){
-    enemy:x:0,y:-64/50
+    enemy:x:0,y:(-64/50)
   }
 };
 
