@@ -18,7 +18,6 @@ var enemy={
   speed:0,  //每秒移動多少pixel
   speed:64,
   move:function(){
-    this.x=this.x+speed
     this.y=this.y-speed
   }
 };
