@@ -55,10 +55,11 @@ $("#game-canvas").on("click", function(){
     }
       else{
         isBuilding=true;
-      }else if(isBuilding=true&&()){
+      }
+  else if(isBuilding){
   tower.x=cursor.X
   tower.y=cursor.Y
-  }
+  isBuilding=false;
   }
 });
 
