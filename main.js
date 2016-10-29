@@ -21,7 +21,9 @@ function draw(){
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,slime.x,slime.y);
   ctx.drawImage(towerBtn,575,420,55,55);
+  if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
+  }
 }
 
 //取得滑鼠游標位置
@@ -45,6 +47,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
     return false;
   }
 }
+var tower={};
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
     if(isBuilding){
@@ -52,9 +55,14 @@ $("#game-canvas").on("click", function(){
     }
       else{
         isBuilding=true;
-      }
+      }else if(isBuilding=true&&()){
+  tower.x=cursor.X
+  tower.y=cursor.Y
+  }
+  );
   }
 });
+
 
 //執行draw函式
 //draw();
