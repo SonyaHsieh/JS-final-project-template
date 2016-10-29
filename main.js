@@ -23,8 +23,8 @@ function draw(){
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
-  ctx.drawImage(towerImg,tower.x,tower.y);
   }
+  ctx.drawImage(towerImg,tower.x,tower.y);
 }
 
 //取得滑鼠游標位置
@@ -59,8 +59,8 @@ $("#game-canvas").on("click", function(){
   }
   }
   else if(isBuilding){
-  tower.x=cursor.X
-  tower.y=cursor.Y
+  tower.x=cursor.X;
+  tower.y=cursor.Y;
   isBuilding=false;
   }
 });
