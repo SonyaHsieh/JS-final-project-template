@@ -15,7 +15,7 @@ towerImg.src= "images/tower.png";
 var enemy={
   x:96,
   y:480-32,
-  speed:0,//每秒移動多少pixel
+  speed:0, 
   speed:64,
   move:function(){
     this.x=0/speed*1
