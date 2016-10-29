@@ -1,5 +1,6 @@
 var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
+var FPS=50
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.png";
@@ -10,16 +11,22 @@ towerBtn.src="images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src= "images/tower.png";
 
-var slime={
+var enemy={
   x:96,
   y:480-32,
+  speed:0,//每秒移動多少pixel
+  speed:64,
+  move: function(){
+    enemy{x:0,y:-64/FPS}
+  }
 };
 
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
+  enemy.move();
   ctx.drawImage(bgImg,0,0,640,480);
-  ctx.drawImage(slimeImg,slime.x,slime.y);
+  ctx.drawImage(slimeImg,enemy.x,enemy.y);
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
@@ -73,5 +80,5 @@ $("#game-canvas").on("click", function(){
 //setTimeout(draw, 1000);
 //1000毫秒=1秒
 //每16毫秒執行一次
-setInterval(draw, 16);
+setInterval(draw, 1000/FPS);
 
