@@ -52,10 +52,10 @@ $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
     if(isBuilding){
       isBuilding=false;
-    }
+  }
       else{
         isBuilding=true;
-      }
+  }
   }
   else if(isBuilding){
   tower.x=cursor.X
