@@ -15,11 +15,11 @@ towerImg.src= "images/tower.png";
 var enemy={
   x:96,
   y:480-32,
-  speed:0,  //每秒移動多少pixel
-  speed:64,
+  speedx:0,  //每秒移動多少pixel
+  speedy:-64,
   move:function(){
-    this.x=this.x+this.speed/FPS;
-    this.y=this.y+this.speed/FPS;
+    this.x=this.x+this.speedx/FPS;
+    this.y=this.y+this.speedy/FPS;
   }
 };
 
