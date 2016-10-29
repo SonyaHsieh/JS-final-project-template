@@ -59,8 +59,8 @@ $("#game-canvas").on("click", function(){
   }
   }
   else if(isBuilding){
-  tower.x=cursor.X;
-  tower.y=cursor.Y;
+  tower.x=cursor.x;
+  tower.y=cursor.y;
   isBuilding=false;
   }
 });
