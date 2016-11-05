@@ -23,10 +23,29 @@ var enemy={
   move:function(){
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
-    if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,
-    this.x, this.y,
-    this.speed/FPS, this.speed/FPS)){
+    if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, 
+                  this.x, this.y, this.speed/FPS, this.speed/FPS)){
       console.log("d");
+      // 修正位置到目標路徑點
+      this.x = enemyPath[this.pathDes].x;
+      this.y = enemyPath[this.pathDes].y;
+      // 指定下一個路徑點為目標路徑點
+      this.pathDes++;
+      // 重新設定前往目標路徑點的所需的水平/垂直速度
+      if (this.x>enemyPath[this.pathDes].x){
+        this.speedx=-64;
+        this.speedy=0;
+      }else if(this.x<enemyPath[this.pathDes].x){
+        this.speedx=64;
+        this.speedy=0;
+      }else if(this.y>enemyPath[this.pathDes].y){
+        this.speedx=0;
+        this.speedy=-64;
+      }else if(this.y<enemyPath[this.pathDes].y){
+        this.speedx=0;
+        this.speedy=64;
+      }
+     
   }}
 };
 
@@ -58,7 +77,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 .    && pointX<=targetX+targetWidth
      && pointY>=targetY
      && pointY<=targetY+targetHeight
-     ){
+  ){
     return true;
   }else{
     return false;
