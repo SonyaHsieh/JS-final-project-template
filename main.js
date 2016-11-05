@@ -26,7 +26,7 @@ var enemy={
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
-  enemy.move();
+  //enemy.move();
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
   ctx.drawImage(towerBtn,575,420,55,55);
