@@ -3,7 +3,7 @@ var ctx= canvas.getContext("2d");
 var FPS=50
 
 var bgImg= document.createElement("img");
-bgImg.src= "images/map.png";
+bgImg.src= "images/map.2.png";
 var slimeImg= document.createElement("img");
 slimeImg.src= "images/slime.gif";
 var towerBtn= document.createElement("img");
