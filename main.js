@@ -18,6 +18,7 @@ var enemy={
   y:448,
   speedx:0,  //每秒移動多少pixel
   speedy:-64,
+  speed:64,
   pathDes:0,
   move:function(){
     this.x=this.x+this.speedx/FPS;
@@ -26,7 +27,7 @@ var enemy={
     this.x, this.y,
     this.speed/FPS, this.speed/FPS)){
       console.log("d");
-  }
+  }}
 };
 
 
