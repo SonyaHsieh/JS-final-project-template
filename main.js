@@ -55,7 +55,7 @@ $("#game-canvas").on("mousemove", function(event){
 var isBuilding=false;
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
   if(   pointX>=targetX
-.     && pointX<=targetX+targetWidth
+.    && pointX<=targetX+targetWidth
      && pointY>=targetY
      && pointY<=targetY+targetHeight
      ){
