@@ -12,6 +12,7 @@ var towerImg = document.createElement("img");
 towerImg.src= "images/tower.png";
 
 //敵人的移動
+//路徑點偵測區
 var enemy={
   x:32,
   y:448,
@@ -21,13 +22,17 @@ var enemy={
   move:function(){
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
+    if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,
+    this.x, this.y,
+    this.speed/FPS, this.speed/FPS)){
+      console.log("d");
   }
 };
 
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
-  //enemy.move();
+  enemy.move();
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
   ctx.drawImage(towerBtn,575,420,55,55);
@@ -49,7 +54,7 @@ $("#game-canvas").on("mousemove", function(event){
 var isBuilding=false;
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
   if(   pointX>=targetX
-     && pointX<=targetX+targetWidth
+.     && pointX<=targetX+targetWidth
      && pointY>=targetY
      && pointY<=targetY+targetHeight
      ){
@@ -75,7 +80,8 @@ $("#game-canvas").on("click", function(){
   }
 });
 
-//路徑點偵測區
+
+
 
 //路徑
 //console enemy.x=448
