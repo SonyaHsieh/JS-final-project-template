@@ -25,7 +25,6 @@ var enemy={
     this.y=this.y+this.speedy/FPS;
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, 
                   this.x, this.y, this.speed/FPS, this.speed/FPS)){
-      console.log("d");
       // 修正位置到目標路徑點
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
