@@ -13,8 +13,8 @@ towerImg.src= "images/tower.png";
 
 //敵人的移動
 var enemy={
-  x:96,
-  y:480-32,
+  x:32,
+  y:448,
   speedx:0,  //每秒移動多少pixel
   speedy:-64,
   move:function(){
@@ -73,6 +73,21 @@ $("#game-canvas").on("click", function(){
   isBuilding=false;
   }
 });
+
+//路徑
+//console enemy.x=448
+var enemyPath =[
+  {x:32,y:448},
+  {x:32,y:32},
+  {x:256,y:32},
+  {x:256,y:320},
+  {x:448,y:320},
+  {x:448,y:224},
+  {x:576,y:224},
+  {x:576,y:96},
+  {x:576,y:96},
+  {x:608,y:96},
+];
 
 
 //執行draw函式
