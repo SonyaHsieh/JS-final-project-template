@@ -17,6 +17,7 @@ var enemy={
   y:448,
   speedx:0,  //每秒移動多少pixel
   speedy:-64,
+  pathDes:0,
   move:function(){
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
@@ -73,6 +74,8 @@ $("#game-canvas").on("click", function(){
   isBuilding=false;
   }
 });
+
+//路徑點偵測區
 
 //路徑
 //console enemy.x=448
