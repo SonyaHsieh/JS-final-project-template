@@ -1,6 +1,9 @@
 var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
-var FPS=50
+var FPS=50;
+var clock =0;
+var time=prompt("Time?");
+var enemies = [];
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.2.png";
@@ -17,14 +20,9 @@ towerImg.src= "images/tower.png";
 //new為關鍵字
 //以funcion 表示類別 x:32, ==> this.x=32;
 //時間
-var time=prompt("time?");
-var enemies = [];
-for(var clock =0; clock++){
-  if(clock%(time*1)==0){
-    var newEnemy= new Enemy();
-    enemies.push(newEnemy);
-  }
-}
+
+
+ 
 
 function Enemy(){
   this.x=32;
@@ -64,7 +62,13 @@ function Enemy(){
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
+   if(clock%(time*1)==0){
+    var newEnemy= new Enemy();
+    enemies.push(newEnemy);
+  }
+
   enemy.move();
+  clock++;
   ctx.drawImage(bgImg,0,0,640,480);
   ctx.drawImage(slimeImg,enemy.x,enemy.y);
   ctx.drawImage(towerBtn,575,420,55,55);
