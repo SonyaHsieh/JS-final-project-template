@@ -13,16 +13,12 @@ var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src= "images/tower.png";
-
-  
+ 
 //敵人的移動
 //路徑點偵測區
 //new為關鍵字
 //以funcion 表示類別 x:32, ==> this.x=32;
 //時間
-
-var enemy = new Enemy();
- 
 
 function Enemy(){
   this.x=32;
@@ -66,11 +62,14 @@ function draw(){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
   }
-
-  enemy.move();
+  for(var i=0; i<enemies.length; i++){
+    //enemies[i]正在操作的敵人
+    enemies[i].move;
+    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
+  }
   clock++;
   ctx.drawImage(bgImg,0,0,640,480);
-  ctx.drawImage(slimeImg,enemy.x,enemy.y);
+ 
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
