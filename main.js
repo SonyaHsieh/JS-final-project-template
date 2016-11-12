@@ -11,11 +11,21 @@ towerBtn.src="images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src= "images/tower.png";
 
+  
 //敵人的移動
 //路徑點偵測區
 //new為關鍵字
 //以funcion 表示類別 x:32, ==> this.x=32;
-var enemy = new Enemy();
+//時間
+var time=prompt("time?");
+var enemies = [];
+for(var clock =0; clock++){
+  if(clock%(time*1)==0){
+    var newEnemy= new Enemy();
+    enemies.push(newEnemy);
+  }
+}
+
 function Enemy(){
   this.x=32;
   this.y=448;
