@@ -14,15 +14,15 @@ towerImg.src= "images/tower.png";
 //敵人的移動
 //路徑點偵測區
 //new為關鍵字
-//以funcion 表示類別 x:32, ==> x=32;
+//以funcion 表示類別 x:32, ==> this.x=32;
 var enemy = new Enemy();
 function Enemy(){
   this.x=32;
   this.y=448;
-  speedx=0;  //每秒移動多少pixel
-  speedy=-64;
-  speed=64;
-  pathDes=0;
+  this.speedx=0;  //每秒移動多少pixel
+  this.speedy=-64;
+  this.speed=64;
+  this.pathDes=0;
   this.move=function(){
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
