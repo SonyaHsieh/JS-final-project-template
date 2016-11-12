@@ -13,7 +13,10 @@ towerImg.src= "images/tower.png";
 
 //敵人的移動
 //路徑點偵測區
-var enemy={
+//new為關鍵字
+//以funcion 表示類別
+var enemy = new Enemy();
+function Enemy(){
   x:32,
   y:448,
   speedx:0,  //每秒移動多少pixel
