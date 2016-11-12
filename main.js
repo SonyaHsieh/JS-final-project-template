@@ -17,12 +17,12 @@ towerImg.src= "images/tower.png";
 //以funcion 表示類別 this
 var enemy = new Enemy();
 function Enemy(){
-  this.x:32,
-  this.y:448,
-  speedx:0,  //每秒移動多少pixel
-  speedy:-64,
-  speed:64,
-  pathDes:0,
+  this.x:32;
+  this.y:448;
+  speedx:0;  //每秒移動多少pixel
+  speedy:-64;
+  speed:64;
+  pathDes:0;
   move:function(){
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
