@@ -21,7 +21,7 @@ towerImg.src= "images/tower.png";
 //以funcion 表示類別 x:32, ==> this.x=32;
 //時間
 
-
+var enemy = newEnemy();
  
 
 function Enemy(){
