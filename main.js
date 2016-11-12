@@ -58,7 +58,8 @@ function Enemy(){
 
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
-   if(clock%(time*1)==0){
+ ctx.drawImage(bgImg,0,0,640,480);  
+ if(clock%(time*1)==0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
   }
@@ -68,8 +69,6 @@ function draw(){
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
   clock++;
-  ctx.drawImage(bgImg,0,0,640,480);
- 
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
