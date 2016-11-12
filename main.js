@@ -64,9 +64,8 @@ function draw(){
   }
   for(var i=0; i<enemies.length; i++){
     //enemies[i]正在操作的敵人
-    enemies[i].move;
+    enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
-   console.log("a");
   }
   clock++;
   ctx.drawImage(bgImg,0,0,640,480);
