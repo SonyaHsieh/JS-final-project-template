@@ -58,7 +58,7 @@ function Enemy(){
       }
      
   }}
-  if(this.x=608 this.y=96){
+  if(this.x=608,this.y=96){
    this.hp==0;
   }
 };
