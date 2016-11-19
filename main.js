@@ -116,7 +116,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 }
 //瞄準敵人 
 var tower={
- range:96;
+ range:96,
  aimingEnemyId= null;
  searchEnemy.function(){
  for(var i=0; i<enemies.length; i++){
