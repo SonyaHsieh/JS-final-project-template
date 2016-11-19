@@ -83,7 +83,7 @@ function draw(){
     enemies.splice(i,1);   
    }
    //瞄準敵人
-   ctx.drawImage(aimImg, enemies[aiming]
+   ctx.drawImage(aimImg, enemies[aimingEnemyId].x, enemies[aimingEnemyId].y); 
    //enemies[i]正在操作的敵人
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
