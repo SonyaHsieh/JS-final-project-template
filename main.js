@@ -38,7 +38,7 @@ function Enemy(){
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, 
                   this.x, this.y, this.speed/FPS, this.speed/FPS)){
      //判斷是否到達生命樹
-     if(this.x=enemyPath[9].x){
+     if(this.x=enemyPath[9].x & this.y=enemyPath[9].y){
       this.hp==0;
       treeHp=treeHp-10;
      }else{
