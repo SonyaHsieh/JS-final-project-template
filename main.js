@@ -70,7 +70,7 @@ function Enemy(){
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
- ctx.fillText("hp=100",20,28);
+ ctx.fillText("hp="+treehp,20,28);
  if(clock%(time*1)==0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
