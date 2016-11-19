@@ -152,8 +152,10 @@ function draw(){
   //瞄準敵人
  if(tower.aimingEnemyId!=null){
  var id=tower.aimingEnemyId;
+ console.log(id);
  ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
  }
+
   for(var i=0; i<enemies.length; i++){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
