@@ -16,6 +16,8 @@ var towerBtn= document.createElement("img");
 towerBtn.src="images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src= "images/tower.png";
+var aimImg= document.createElement("img");
+aimImg.src= "images/crosshair.png";
  
 //敵人的移動
 //路徑點偵測區
@@ -78,9 +80,10 @@ function draw(){
   for(var i=0; i<enemies.length; i++){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
-    enemies.splice(i,1);
-      
+    enemies.splice(i,1);   
    }
+   //瞄準敵人
+   ctx.drawImage(aimImg, enemies[aiming]
    //enemies[i]正在操作的敵人
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
@@ -117,7 +120,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 //瞄準敵人 
 var tower={
  range:96,
- aimingEnemyId= null;
+ aimingEnemyId= null,
  searchEnemy.function(){
  for(var i=0; i<enemies.length; i++){
  var distance = Math.sqrt(  Math.pow(this.x-enemies[i].x,2+Math.pow(this.y-enemies[i].y,2) );
