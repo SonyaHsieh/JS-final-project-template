@@ -114,7 +114,19 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
     return false;
   }
 }
-var tower={};
+//瞄準敵人 
+var tower={
+ range:96;
+ aimingEnemyId= null;
+ searchEnemy.function(){
+ for(var i=0; i<enemies.length; i++){
+ var distance = Math.sqrt(  Math.pow(this.x-enemies[i].x,2+Math.pow(this.y-enemies[i].y,2) );
+ if(distance<range){
+   this.aimingEnemyId= i;
+   return;//結束迴圈
+ }else{
+   aimingEnemyId= null;
+ }
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
     if(isBuilding){
