@@ -133,7 +133,8 @@ var tower={
  }else{
    aimingEnemyId= null;
  }
- };
+}
+};
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
     if(isBuilding){
