@@ -150,7 +150,7 @@ function draw(){
     enemies.push(newEnemy);
   }
   //瞄準敵人
- if(aimingEnemyId!=null){
+ if(tower.aimingEnemyId!=null){
  var id=tower.aimingEnemyId;
  ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
  }
