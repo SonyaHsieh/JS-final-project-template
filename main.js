@@ -69,35 +69,7 @@ function Enemy(){
 };
 
 
-function draw(){
-  //將背景圖片畫在canvas上的(0,0)位置
- ctx.drawImage(bgImg,0,0,640,480);  
- ctx.fillText("hp="+treeHp,20,28);
- if(clock%(time*1)==0){
-    var newEnemy= new Enemy();
-    enemies.push(newEnemy);
-  }
-  //瞄準敵人
- if(aimingEnemyId!=null){
- var id=tower.aimingEnemyId;
- ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
- }
-  for(var i=0; i<enemies.length; i++){
-   //enemies刪除~自爆
-   if(enemies[i].hp<=0){
-    enemies.splice(i,1);   
-   }
-   //enemies[i]正在操作的敵人
-    enemies[i].move();
-    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
-  }
-  clock++;
-  ctx.drawImage(towerBtn,575,420,55,55);
-  if(isBuilding){
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
-  }
-  ctx.drawImage(towerImg,tower.x,tower.y);
-}
+
 
 //取得滑鼠游標位置
 var cursor= {x:0,y:0};
@@ -169,7 +141,35 @@ var enemyPath =[
   {x:576,y:96},
   {x:608,y:96},
 ];
-
+function draw(){
+  //將背景圖片畫在canvas上的(0,0)位置
+ ctx.drawImage(bgImg,0,0,640,480);  
+ ctx.fillText("hp="+treeHp,20,28);
+ if(clock%(time*1)==0){
+    var newEnemy= new Enemy();
+    enemies.push(newEnemy);
+  }
+  //瞄準敵人
+ if(aimingEnemyId!=null){
+ var id=tower.aimingEnemyId;
+ ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
+ }
+  for(var i=0; i<enemies.length; i++){
+   //enemies刪除~自爆
+   if(enemies[i].hp<=0){
+    enemies.splice(i,1);   
+   }
+   //enemies[i]正在操作的敵人
+    enemies[i].move();
+    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
+  }
+  clock++;
+  ctx.drawImage(towerBtn,575,420,55,55);
+  if(isBuilding){
+  ctx.drawImage(towerImg,cursor.x,cursor.y);
+  }
+  ctx.drawImage(towerImg,tower.x,tower.y);
+}
 
 //執行draw函式
 //draw();
