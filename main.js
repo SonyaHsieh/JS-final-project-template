@@ -6,6 +6,7 @@ var time=prompt("Time?");
 var enemies = [];
 ctx.font="24px Segoe Print";
 ctx.fillStyle ="white";
+var hp=100;
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.2.png";
@@ -61,7 +62,7 @@ function Enemy(){
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
- ctx.fillText("hp=100",20,20);
+ ctx.fillText("hp",20,28);
  if(clock%(time*1)==0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
