@@ -62,7 +62,7 @@ function Enemy(){
         this.speedy=64;
       }
      
-  }
+  }}
   }
 };
 
