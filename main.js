@@ -22,8 +22,10 @@ towerImg.src= "images/tower.png";
 //new為關鍵字
 //以funcion 表示類別 x:32, ==> this.x=32;
 //時間
+//hp值
 
 function Enemy(){
+  this.hp=7;
   this.x=32;
   this.y=448;
   this.speedx=0;  //每秒移動多少pixel
@@ -56,6 +58,9 @@ function Enemy(){
       }
      
   }}
+  if(this.x=608 this.y=96){
+   this.hp==0;
+  }
 };
 
 
@@ -68,7 +73,12 @@ function draw(){
     enemies.push(newEnemy);
   }
   for(var i=0; i<enemies.length; i++){
-    //enemies[i]正在操作的敵人
+   //enemies刪除~自爆
+   if(enemies[i].hp<=0){
+    enemies.splice(i,1);
+      
+   }
+   //enemies[i]正在操作的敵人
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
