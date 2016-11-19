@@ -77,17 +77,16 @@ function draw(){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
   }
+  //瞄準敵人
+ if(aimingEnemyId!=null){
+ var id=tower.aimingEnemyId;
+ ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
+ }
   for(var i=0; i<enemies.length; i++){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);   
    }
-   //瞄準敵人
-   if(aimingEnemyId!=null){
-   var id=tower.aimingEnemyId
-   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
-   }
-   
    //enemies[i]正在操作的敵人
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
