@@ -83,7 +83,11 @@ function draw(){
     enemies.splice(i,1);   
    }
    //瞄準敵人
-   ctx.drawImage(aimImg, enemies[aimingEnemyId].x, enemies[aimingEnemyId].y); 
+   if(aimingEnemyId!=null){
+   var id=tower.aimingEnemyId
+   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
+   }
+   
    //enemies[i]正在操作的敵人
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
@@ -130,6 +134,7 @@ var tower={
  }else{
    aimingEnemyId= null;
  }
+ };
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
     if(isBuilding){
