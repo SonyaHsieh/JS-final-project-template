@@ -206,10 +206,10 @@ function draw(){
   }
   //瞄準敵人+塔工廠
   for(var i=0; i<enemies.length; i++){
-  ctx.drawImage(towerImg,tower[i].x,tower[i].y); 
-  tower[i].searchEnemy();
-  if(tower[i].aimingEnemyId!=null){
-  var id=tower[i].aimingEnemyId;
+  ctx.drawImage(towerImg,towers[i].x,towers[i].y); 
+  towers[i].searchEnemy();
+  if(towers[i].aimingEnemyId!=null){
+  var id=towers[i].aimingEnemyId;
   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
  }
  }
