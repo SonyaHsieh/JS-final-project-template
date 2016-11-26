@@ -204,10 +204,9 @@ function draw(){
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
-  ctx.drawImage(towerImg,tower.x,tower.y);
-  
   //瞄準敵人+塔工廠
   for(var i=0; i<enemies.length; i++){
+  ctx.drawImage(towerImg,tower[i].x,tower[i].y); 
   tower[i].searchEnemy();
   if(tower[i].aimingEnemyId!=null){
   var id=tower[i].aimingEnemyId;
