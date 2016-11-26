@@ -128,8 +128,7 @@ var tower={
   if( this.readyToShootTime<=0){
    this.shoot(i);//將i變id
    this.readyToShootTime=this.fireRate;
-   score+=10;
-   money+=10;
+   
   }
    return;//結束迴圈
  }
@@ -185,7 +184,9 @@ function draw(){
   for(var i=0; i<enemies.length; i++){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
-    enemies.splice(i,1);   
+    enemies.splice(i,1);
+    score+=10;
+    money+=10;
    }
    //enemies[i]正在操作的敵人
     enemies[i].move();
