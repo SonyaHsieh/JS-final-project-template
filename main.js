@@ -107,7 +107,7 @@ var tower={
    this.aimingEnemyId= i;
   //判斷是否倒數完畢
   if( this.readyToShootTime<=0){
-   this.shoot();
+   this.shoot(i);
    this.readyToShootTime=this.fireRate;
   }
    return;//結束迴圈
