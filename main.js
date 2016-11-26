@@ -143,7 +143,7 @@ function Tower(x,y){
   this.aimingEnemyId= null;
  },//一定要加,
  //發射砲彈
- shoot:function(id){ //將攻擊對象的id傳入
+ this.shoot=function(id){ //將攻擊對象的id傳入
 //畫線
 ctx.beginPath();//開始畫線
 ctx.moveTo(this.x,this.y);//先將畫筆移動到(x1,y1)
