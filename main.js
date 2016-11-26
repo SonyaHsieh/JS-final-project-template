@@ -120,12 +120,12 @@ $("#game-canvas").on("click", function(){
 function Tower(x,y){
  this.x=x;
  this.y=y;
- this.range:96;
- this.aimingEnemyId: null;
- this.fireRate:1;//一秒發射一次
- this.readyToShootTime:1;//還有幾秒就發射
- this.damage:2;
- this.searchEnemy:function(){
+ this.range=96;
+ this.aimingEnemyId=null;
+ this.fireRate=1;//一秒發射一次
+ this.readyToShootTime=1;//還有幾秒就發射
+ this.damage=2;
+ this.searchEnemy=function(){
  this.readyToShootTime-=1/FPS //減少距離下個射擊距離的冷卻時間==>一秒刷新FPS=50次  每次-1/50秒
  for(var i=0; i<enemies.length; i++){
  var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
