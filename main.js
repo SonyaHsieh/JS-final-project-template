@@ -1,9 +1,14 @@
+//塔
+//地圖
+//money
+//hw
 var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
 var FPS=50;
 var clock =0;
 var time=prompt("Time?");
 var enemies = [];
+var towers =[];
 ctx.font="24px Segoe Print";
 ctx.fillStyle ="white";
 var treeHp=100;
@@ -29,7 +34,7 @@ aimImg.src= "images/crosshair.png";
 //hp值
 
 function Enemy(){
-  this.hp=7;
+  this.hp=5;
   this.x=32;
   this.y=448;
   this.speedx=0;  //每秒移動多少pixel
@@ -105,20 +110,22 @@ $("#game-canvas").on("click", function(){
   }
   }
   else if(isBuilding&&money>=30){
-  tower.x=cursor.x-cursor.x%32;
-  tower.y=cursor.y-cursor.y%32;
+  towers.push(new Tower(tower.x=cursor.x-cursor.x%32,tower.y=cursor.y-cursor.y%32));
+  
   money-=30;
   isBuilding=false;
   }
 });
 //瞄準敵人
-var tower={
- range:96,
- aimingEnemyId: null,
- fireRate:1,//一秒發射一次
- readyToShootTime:1,//還有幾秒就發射
- damage:2,
- searchEnemy:function(){
+function Tower(x,y){
+ this.x=x;
+ this.y=y;
+ this.range:96;
+ this.aimingEnemyId: null;
+ this.fireRate:1;//一秒發射一次
+ this.readyToShootTime:1;//還有幾秒就發射
+ this.damage:2;
+ this.searchEnemy:function(){
  this.readyToShootTime-=1/FPS //減少距離下個射擊距離的冷卻時間==>一秒刷新FPS=50次  每次-1/50秒
  for(var i=0; i<enemies.length; i++){
  var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
@@ -199,13 +206,14 @@ function draw(){
   }
   ctx.drawImage(towerImg,tower.x,tower.y);
   
-  //瞄準敵人
-  tower.searchEnemy();
-  if(tower.aimingEnemyId!=null){
-  var id=tower.aimingEnemyId;
+  //瞄準敵人+塔工廠
+  for(var i=0; i<enemies.length; i++){
+  tower[i].searchEnemy();
+  if(tower[i].aimingEnemyId!=null){
+  var id=tower[i].aimingEnemyId;
   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
  }
- 
+ }
 }
 
 //執行draw函式
