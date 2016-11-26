@@ -7,6 +7,8 @@ var enemies = [];
 ctx.font="24px Segoe Print";
 ctx.fillStyle ="white";
 var treeHp=100;
+var score=0;
+var money=0;
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.2.png";
@@ -92,6 +94,23 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
     return false;
   }
 }
+//當isBuilding=true 塔的圖片顯示在游標上
+$("#game-canvas").on("click", function(){
+  if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
+    if(isBuilding){
+      isBuilding=false;
+  }
+      else{
+        isBuilding=true;
+  }
+  }
+  else if(isBuilding&&money>=30){
+  tower.x=cursor.x-cursor.x%32;
+  tower.y=cursor.y-cursor.y%32;
+  money-=30;
+  isBuilding=false;
+  }
+});
 //瞄準敵人
 var tower={
  range:96,
@@ -109,6 +128,8 @@ var tower={
   if( this.readyToShootTime<=0){
    this.shoot(i);//將i變id
    this.readyToShootTime=this.fireRate;
+   score+=10;
+   money+=10;
   }
    return;//結束迴圈
  }
@@ -130,21 +151,7 @@ enemies[id].hp=enemies[id].hp-this.damage;
 };
 
 
-$("#game-canvas").on("click", function(){
-  if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
-    if(isBuilding){
-      isBuilding=false;
-  }
-      else{
-        isBuilding=true;
-  }
-  }
-  else if(isBuilding){
-  tower.x=cursor.x-cursor.x%32;
-  tower.y=cursor.y-cursor.y%32;
-  isBuilding=false;
-  }
-});
+
 
 
 
@@ -166,7 +173,10 @@ var enemyPath =[
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
+ //印出文字
  ctx.fillText("hp="+treeHp,20,28);
+ ctx.fillText("score="+score,20,60);
+ ctx.fillText("money="+money,20,92);
  if(clock%(time*1)==0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
