@@ -99,6 +99,7 @@ var tower={
  searchEnemy:function(){
  for(var i=0; i<enemies.length; i++){
  var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
+ console.log(distance);
  if(distance<range){
    this.aimingEnemyId= i;
    return;//結束迴圈
@@ -107,6 +108,12 @@ var tower={
    this.aimingEnemyId= null;
  }
 };
+//瞄準敵人
+ if(tower.aimingEnemyId!=null){
+ var id=tower.aimingEnemyId;
+ console.log(id);
+ ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
+ }
 
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 575,420,55,55) ){
@@ -149,13 +156,7 @@ function draw(){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
   }
-  //瞄準敵人
- if(tower.aimingEnemyId!=null){
- var id=tower.aimingEnemyId;
- console.log(id);
- ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
- }
-
+  
   for(var i=0; i<enemies.length; i++){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
