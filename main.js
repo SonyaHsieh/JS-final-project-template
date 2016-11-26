@@ -8,7 +8,7 @@ ctx.font="24px Segoe Print";
 ctx.fillStyle ="white";
 var treeHp=100;
 var score=0;
-var money=0;
+var money=50;
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.2.png";
