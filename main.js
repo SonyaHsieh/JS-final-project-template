@@ -119,8 +119,8 @@ var tower={
  shoot:function(id){ //將攻擊對象的id傳入
 //畫線
 ctx.beginPath();//開始畫線
-ctx.moveTo(x1,y1);//先將畫筆移動到(x1,y1)
-ctx.lineTo(x2,y2);//畫一條直線到(x2,y2)
+ctx.moveTo(this.x,this.y);//先將畫筆移動到(x1,y1)
+ctx.lineTo(enemies[i].x,enemies[i].y);//畫一條直線到(x2,y2)
 ctx.strokeStyle="red";//設定線條顏色
 ctx.lineWidth=3;//設定線條寬度
 ctx.stroke();//上色
