@@ -99,7 +99,7 @@ var tower={
  searchEnemy:function(){
  for(var i=0; i<enemies.length; i++){
  var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
- if(distance<range){
+ if(distance<this.range){
    this.aimingEnemyId= i;
    return;//結束迴圈
  }
