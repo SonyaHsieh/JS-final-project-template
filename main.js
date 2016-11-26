@@ -92,20 +92,41 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
     return false;
   }
 }
-//瞄準敵人 
+//瞄準敵人
 var tower={
  range:96,
  aimingEnemyId: null,
+ fireRate:1,//一秒發射一次
+ readyToShootTime:1,//還有幾秒就發射
+ damage:2,
  searchEnemy:function(){
+ this.readyToShootTime-=1/FPS //減少距離下個射擊距離的冷卻時間==>一秒刷新FPS=50次  每次-1/50秒
  for(var i=0; i<enemies.length; i++){
  var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
  if(distance<this.range){
    this.aimingEnemyId= i;
+  //判斷是否倒數完畢
+  if( this.readyToShootTime<=0){
+   this.shoot();
+   this.readyToShootTime=this.fireRate;
+  }
    return;//結束迴圈
  }
+}  
+  this.aimingEnemyId= null;
+ },//一定要加,
+ //發射砲彈
+ shoot:function(id){ //將攻擊對象的id傳入
+//畫線
+ctx.beginPath();//開始畫線
+ctx.moveTo(x1,y1);//先將畫筆移動到(x1,y1)
+ctx.lineTo(x2,y2);//畫一條直線到(x2,y2)
+ctx.strokeStyle="red";//設定線條顏色
+ctx.lineWidth=3;//設定線條寬度
+ctx.stroke();//上色
+//扣血
+enemies[id].hp=enemies[id].hp-this.damage;
 }
-   this.aimingEnemyId= null;
- }
 };
 
 
