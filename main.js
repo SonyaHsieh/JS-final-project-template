@@ -110,7 +110,7 @@ $("#game-canvas").on("click", function(){
   }
   }
   else if(isBuilding&&money>=30){
-  towers.push(new Tower(Tower.x=cursor.x-cursor.x%32,Tower.y=cursor.y-32-(cursor.y-32)%32));
+  towers.push(new Tower(Tower.x=cursor.x-cursor.x%32,Tower.y=cursor.y-cursor.y%32));
   
   money-=30;
   isBuilding=false;
@@ -192,6 +192,7 @@ function draw(){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);
+   }else if(Enemy.pathDes!=EnemyPath.length-1){
     score+=10;
     money+=10;
    }
@@ -202,7 +203,7 @@ function draw(){
   clock++;
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
-  ctx.drawImage(towerImg,cursor.x,cursor.y-32);
+  ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
   //瞄準敵人+塔工廠
   for(var i=0; i<towers.length; i++){
