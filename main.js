@@ -192,9 +192,10 @@ function draw(){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);
-   }else if(Enemy.pathDes!=enemyPath.length-1){
+    if(Enemy.pathDes!=enemyPath.length-1){
     score+=10;
     money+=10;
+    }
    }
    //enemies[i]正在操作的敵人
     enemies[i].move();
