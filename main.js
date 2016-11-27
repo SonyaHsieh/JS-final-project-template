@@ -110,7 +110,7 @@ $("#game-canvas").on("click", function(){
   }
   }
   else if(isBuilding&&money>=30){
-  towers.push(new Tower(towers[i].x=cursor.x-cursor.x%32,towers[i].y=cursor.y-cursor.y%32));
+  towers.push(new Tower(Tower.x=cursor.x-cursor.x%32,Tower.y=cursor.y-cursor.y%32));
   
   money-=30;
   isBuilding=false;
