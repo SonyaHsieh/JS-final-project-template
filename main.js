@@ -200,6 +200,7 @@ function draw(){
   clock++;
   if(clock%20000==0){
    time+=20;
+   Enemy.hp*2;
   }
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
