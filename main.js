@@ -124,7 +124,7 @@ function Tower(x,y){
  this.aimingEnemyId=null;
  this.fireRate=1;//一秒發射一次
  this.readyToShootTime=1;//還有幾秒就發射
- this.damage=2;
+ this.damage=3;
  this.searchEnemy=function(){
  this.readyToShootTime-=1/FPS //減少距離下個射擊距離的冷卻時間==>一秒刷新FPS=50次  每次-1/50秒
  for(var i=0; i<enemies.length; i++){
@@ -164,17 +164,16 @@ enemies[id].hp=enemies[id].hp-this.damage;
 
 //路徑
 //console enemy.x=448
+//towers[i].x
 var enemyPath =[
   {x:32,y:448},
   {x:32,y:32},
   {x:256,y:32},
   {x:256,y:320},
   {x:448,y:320},
-  {x:448,y:224},
-  {x:576,y:224},
-  {x:576,y:96},
-  {x:576,y:96},
-  {x:608,y:96},
+  {x:448,y:192},
+  {x:544,y:192},
+  {x:544,y:128},
 ];
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
