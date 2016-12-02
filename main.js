@@ -6,7 +6,6 @@ var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
 var FPS=50;
 var clock =0;
-var time=prompt("Time?");
 var enemies = [];
 var towers =[];
 ctx.font="24px Segoe Print";
@@ -182,7 +181,7 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock%(time*1)==0){
+ if(clock%80==0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
   }
