@@ -1,11 +1,9 @@
-//塔
-//地圖
-//money
 //hw
 var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
 var FPS=50;
 var clock =0;
+var time = 80;
 var enemies = [];
 var towers =[];
 ctx.font="24px Segoe Print";
@@ -181,7 +179,7 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock%80==0){
+ if(clock%time===0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
   }
@@ -200,6 +198,9 @@ function draw(){
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
   clock++;
+  if(clock%20000==0){
+   time+=20;
+  }
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x-cursor.x%32,cursor.y-cursor.y%32);
@@ -221,6 +222,6 @@ function draw(){
 //等待1秒再執行
 //setTimeout(draw, 1000);
 //1000毫秒=1秒
-//每16毫秒執行一次
+//每16毫秒執行一次 1秒更新50張
 setInterval(draw, 1000/FPS);
 
