@@ -172,6 +172,12 @@ var enemyPath =[
   {x:544,y:192},
   {x:544,y:128},
 ];
+
+if(clock%20000==0){
+   time+=20;
+   Enemy.hp*2;
+  }
+
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
@@ -198,10 +204,7 @@ function draw(){
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
   clock++;
-  if(clock%20000==0){
-   time+=20;
-   Enemy.hp*2;
-  }
+  
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x-cursor.x%32,cursor.y-cursor.y%32);
