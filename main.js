@@ -203,7 +203,7 @@ function draw(){
   clock++;
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
+  ctx.drawImage(towerImg,cursor.x-cursor.x%32,cursor.y-cursor.y%32);
   }
   //瞄準敵人+塔工廠
   for(var i=0; i<towers.length; i++){
