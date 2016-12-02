@@ -173,7 +173,7 @@ var enemyPath =[
   {x:544,y:128},
 ];
 
-if(clock%20000==0){
+if(clock%2000==0){
    time+=20;
    Enemy.hp*2;
   }
@@ -194,7 +194,7 @@ function draw(){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);
-    if(Enemy.pathDes!=enemyPath.length-1){
+    if(Enemy.pathDes !=enemyPath.length-1){
     score+=10;
     money+=10;
     }
