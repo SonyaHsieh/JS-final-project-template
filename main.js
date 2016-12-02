@@ -16,7 +16,7 @@ var score=0;
 var money=50;
 
 var bgImg= document.createElement("img");
-bgImg.src= "images/map.2.png";
+bgImg.src= "images/map.3.png";
 var slimeImg= document.createElement("img");
 slimeImg.src= "images/amy.png";
 var towerBtn= document.createElement("img");
