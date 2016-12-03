@@ -1,4 +1,5 @@
 //hw
+//alert("Building a tower needs")
 var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
 var FPS=50;
@@ -194,7 +195,7 @@ function draw(){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);
-    if(Enemy.pathDes !=enemyPath.length-1){
+    if(Enemy.pathDes !=enemyPath.length){
     score+=10;
     money+=10;
     }
