@@ -196,7 +196,7 @@ function draw(){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);
-    if(Enemy.pathDes !=enemyPath.length){
+    if(Enemy.pathDes !==enemyPath.length-1){
     score+=10;
     money+=10;
     }
