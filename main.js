@@ -203,7 +203,7 @@ function draw(){
     score+=10;
     money+=10;
      if(clock!=0&clock%1500==0){
-      enemies[i].hp*2;
+      enemies[i].hp+=20;
      }
     }
    }
@@ -250,7 +250,7 @@ function gameover(){
     ctx.fillText("GAME OVER", canvas.width/2, canvas.height/2-96);
     ctx.font = "48px Segoe Print";
     ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
-    ctx.font = "128px Arial";
+    ctx.font = "128px Segoe Print";
     ctx.fillText(score, canvas.width/2, canvas.height/2+96);
     clearInterval(intervalID);
 
@@ -261,7 +261,7 @@ function win(){
     ctx.fillText("YOU WIN!", canvas.width/2, canvas.height/2-96);
     ctx.font = "48px Segoe Print";
     ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
-    ctx.font = "128px Arial";
+    ctx.font = "128px Segoe Print";
     ctx.fillText(score, canvas.width/2, canvas.height/2+96);
     clearInterval(intervalID);
 
