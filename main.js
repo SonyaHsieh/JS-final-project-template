@@ -236,8 +236,7 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
-  clock++;
-  
+ 
   ctx.drawImage(towerBtn,575,420,55,55);
   if(isBuilding){
   ctx.drawImage(towerImg,cursor.x-cursor.x%32,cursor.y-cursor.y%32);
@@ -257,6 +256,7 @@ function draw(){
   if(treeHp<=0){
   gameover();
   }
+  clock++;
  }
  }
 }
