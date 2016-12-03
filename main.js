@@ -7,12 +7,13 @@ var clock =0;
 var time = 90;
 var enemies = [];
 var towers =[];
-ctx.font="24px Segoe Print";
+ctx.font="24px Segoe Print"; //google font+
 ctx.fillStyle ="white";
 var treeHp=100;
 var score=0;
 var money=50;
 var level=1;
+var intervalID =setInterval(draw, 1000/FPS);
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.3.png";
@@ -185,7 +186,7 @@ function draw(){
  ctx.fillText("money="+money,20,92);
  if(clock!=0&clock%1500==0){
    time-=15; 
-   level+1
+   level++;
    alert("Level "+level+"!!");
   }
 
@@ -223,6 +224,11 @@ function draw(){
   if(towers[i].aimingEnemyId!=null){
   var id=towers[i].aimingEnemyId;
   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
+   
+  //結束遊戲
+  if(treehp==0){
+  gameover();
+  }
  }
  }
 }
@@ -235,4 +241,16 @@ function draw(){
 //1000毫秒=1秒
 //每16毫秒執行一次 1秒更新50張
 setInterval(draw, 1000/FPS);
+function gameover(){
+    ctx.textAlign = "center";
+    ctx.font = "64px Segoe Print";
+    ctx.fillText("GAME OVER", canvas.width/2, canvas.height/2-96);
+    ctx.font = "48px Segoe Print";
+    ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
+    ctx.font = "128px Arial";
+    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
+    clearInterval(intervalID);
+
+}
+ 
 
