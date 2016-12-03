@@ -205,8 +205,15 @@ var enemyPath =[
 
 
 function draw(){
-  //將背景圖片畫在canvas上的(0,0)位置
+ //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
+  //結束遊戲
+  if(time<=0){
+   win();
+  }
+  if(treeHp<=0){
+  gameover();
+  }
  //印出文字
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
@@ -252,13 +259,7 @@ function draw(){
   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
  }
  }
-  //結束遊戲
-  if(time<=0){
-   win();
-  }
-  if(treeHp<=0){
-  gameover();
-  }
+ 
 }
 
 //執行draw函式
