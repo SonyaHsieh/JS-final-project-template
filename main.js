@@ -121,7 +121,7 @@ function Tower(x,y){
  this.aimingEnemyId=null;
  this.fireRate=1;//一秒發射一次
  this.readyToShootTime=1;//還有幾秒就發射
- this.damage=2;
+ this.damage=3;
  this.searchEnemy=function(){
  this.readyToShootTime-=1/FPS //減少距離下個射擊距離的冷卻時間==>一秒刷新FPS=50次  每次-1/50秒
  for(var i=0; i<enemies.length; i++){
@@ -181,7 +181,7 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock%20000==0){
+ if(clock%10000==0){
    time+=20;
    Enemy.hp*2;
   }
