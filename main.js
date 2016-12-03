@@ -216,7 +216,7 @@ function draw(){
    level++;
    alert("Level "+level+"!!");
   }
-
+ clock++;
  if(clock%time===0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
@@ -256,7 +256,6 @@ function draw(){
   if(treeHp<=0){
   gameover();
   }
-  clock++;
  }
  }
 }
