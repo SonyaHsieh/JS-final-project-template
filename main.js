@@ -171,7 +171,7 @@ function gameover(){
 
 }
 function win(){
- ctx.textAlign = "center";
+    ctx.textAlign = "center";
     ctx.font = "64px Segoe Print";
     ctx.fillText("YOU WIN!", canvas.width/2, canvas.height/2-96);
     ctx.font = "48px Segoe Print";
@@ -214,7 +214,7 @@ function draw(){
  if(clock!=0&clock%1500==0){
    time-=15; 
    level++;
-   alert("Level "+level+"!!");
+   if(clock/1500!=7)alert("Level "+level+"!!");
   }
  clock++;
  if(clock%time===0){
