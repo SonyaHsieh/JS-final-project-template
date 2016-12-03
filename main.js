@@ -250,7 +250,8 @@ function draw(){
   if(towers[i].aimingEnemyId!=null){
   var id=towers[i].aimingEnemyId;
   ctx.drawImage(aimImg, enemies[id].x, enemies[id].y); 
-   
+ }
+ }
   //結束遊戲
   if(time<=0){
    win();
@@ -258,8 +259,6 @@ function draw(){
   if(treeHp<=0){
   gameover();
   }
- }
- }
 }
 
 //執行draw函式
