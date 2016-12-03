@@ -214,7 +214,9 @@ function draw(){
  if(clock!=0&clock%1500==0){
    time-=15; 
    level++;
-   if(clock/1500!=7)alert("Level "+level+"!!");
+   if(clock/1500!=7){
+    alert("Level "+level+"!!");
+   }
   }
  clock++;
  if(clock%time===0){
