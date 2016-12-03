@@ -182,7 +182,7 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock%1500==0){
+ if(clock!=0&clock%1500==0){
    time-=10;
    Enemy.hp*2;
    alert("Level up!");
@@ -196,7 +196,7 @@ function draw(){
    //enemies刪除~自爆
    if(enemies[i].hp<=0){
     enemies.splice(i,1);
-    if(Enemy.pathDes !==enemyPath.length-1){
+    if(Enemy.pathDes !==enemyPath.length+1){
     score+=10;
     money+=10;
     }
