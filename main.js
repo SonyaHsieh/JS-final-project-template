@@ -158,6 +158,30 @@ ctx.stroke();//上色
 enemies[id].hp=enemies[id].hp-this.damage;
 }
 };
+//遊戲結束
+function gameover(){
+    ctx.textAlign = "center";
+    ctx.font = "64px Segoe Print";
+    ctx.fillText("GAME OVER", canvas.width/2, canvas.height/2-96);
+    ctx.font = "48px Segoe Print";
+    ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
+    ctx.font = "128px Segoe Print";
+    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
+    clearInterval(intervalID);
+
+}
+function win(){
+ ctx.textAlign = "center";
+    ctx.font = "64px Segoe Print";
+    ctx.fillText("YOU WIN!", canvas.width/2, canvas.height/2-96);
+    ctx.font = "48px Segoe Print";
+    ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
+    ctx.font = "128px Segoe Print";
+    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
+    clearInterval(intervalID);
+
+}
+ 
 
 
 
@@ -245,27 +269,3 @@ function draw(){
 //1000毫秒=1秒
 //每16毫秒執行一次 1秒更新50張
 //setInterval(draw, 1000/FPS); 存進變數會執行
-function gameover(){
-    ctx.textAlign = "center";
-    ctx.font = "64px Segoe Print";
-    ctx.fillText("GAME OVER", canvas.width/2, canvas.height/2-96);
-    ctx.font = "48px Segoe Print";
-    ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
-    ctx.font = "128px Segoe Print";
-    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
-    clearInterval(intervalID);
-
-}
-function win(){
- ctx.textAlign = "center";
-    ctx.font = "64px Segoe Print";
-    ctx.fillText("YOU WIN!", canvas.width/2, canvas.height/2-96);
-    ctx.font = "48px Segoe Print";
-    ctx.fillText("you got", canvas.width/2, canvas.height/2-32);
-    ctx.font = "128px Segoe Print";
-    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
-    clearInterval(intervalID);
-
-}
- 
-
