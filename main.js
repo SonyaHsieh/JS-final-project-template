@@ -230,7 +230,7 @@ function draw(){
   if(time<=0){
    win();
   }
-  if(treeHp==0){
+  if(treeHp<=0){
   gameover();
   }
  }
