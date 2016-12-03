@@ -12,6 +12,7 @@ ctx.fillStyle ="white";
 var treeHp=100;
 var score=0;
 var money=50;
+var level=1;
 
 var bgImg= document.createElement("img");
 bgImg.src= "images/map.3.png";
@@ -174,7 +175,7 @@ var enemyPath =[
   {x:544,y:128},
 ];
 
-var level=num;
+
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
@@ -185,10 +186,10 @@ function draw(){
  if(clock!=0&clock%1500==0){
    time-=15;
    enemies[i].hp*2;
-   if(clock/1500=num*1){
-    alert("Level "+num+"!!");
-   }
+   level+1
+   alert("Level "+level+"!!");
   }
+
  if(clock%time===0){
     var newEnemy= new Enemy();
     enemies.push(newEnemy);
