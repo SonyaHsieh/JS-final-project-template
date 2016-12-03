@@ -182,10 +182,12 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock!=0&clock%1500==0&clock/1500=a){
+ if(clock!=0&clock%1500==0){
    time-=15;
    enemies[i].hp*2;
-   alert("Level "+a+"!!");
+   if(clock/1500=i){
+    alert("Level "+i+"!!");
+   }
   }
  if(clock%time===0){
     var newEnemy= new Enemy();
