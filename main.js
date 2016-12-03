@@ -182,9 +182,10 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock%1000==0){
-   time+=20;
+ if(clock%1500==0){
+   time-=10;
    Enemy.hp*2;
+   alert("Level up!");
   }
  if(clock%time===0){
     var newEnemy= new Enemy();
