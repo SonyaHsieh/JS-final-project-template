@@ -184,8 +184,7 @@ function draw(){
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
  if(clock!=0&clock%1500==0){
-   time-=15;
-   enemies[i].hp*2;
+   time-=15; 
    level+1
    alert("Level "+level+"!!");
   }
@@ -202,6 +201,9 @@ function draw(){
     if(enemies[i].pathDes+1 !==enemyPath.length-1){
     score+=10;
     money+=10;
+     if(clock!=0&clock%1500==0){
+      enemies[i].hp*2;
+     }
     }
    }
    //enemies[i]正在操作的敵人
