@@ -174,7 +174,7 @@ var enemyPath =[
   {x:544,y:128},
 ];
 
-
+var level=num;
 function draw(){
   //將背景圖片畫在canvas上的(0,0)位置
  ctx.drawImage(bgImg,0,0,640,480);  
@@ -185,8 +185,8 @@ function draw(){
  if(clock!=0&clock%1500==0){
    time-=15;
    enemies[i].hp*2;
-   if(clock/1500=i){
-    alert("Level "+i+"!!");
+   if(clock/1500=num*1){
+    alert("Level "+num+"!!");
    }
   }
  if(clock%time===0){
