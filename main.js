@@ -41,6 +41,9 @@ function Enemy(){
   this.speedy=-64;
   this.speed=64;
   this.pathDes=0;
+  if(clock!=0&clock%1500==0){
+      this.hp+=15;
+     }
   this.move=function(){
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
@@ -202,9 +205,7 @@ function draw(){
     if(enemies[i].pathDes+1 !==enemyPath.length-1){
     score+=10;
     money+=10;
-     if(clock!=0&clock%1500==0){
-      enemies[i].hp+=20;
-     }
+     
     }
    }
    //enemies[i]正在操作的敵人
