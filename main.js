@@ -4,7 +4,7 @@ var canvas= document.getElementById("game-canvas");
 var ctx= canvas.getContext("2d");
 var FPS=50;
 var clock =0;
-var time = 80;
+var time = 90;
 var enemies = [];
 var towers =[];
 ctx.font="24px Segoe Print";
@@ -182,10 +182,10 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock!=0&clock%1500==0){
-   time-=10;
-   Enemy.hp*2;
-   alert("Level up!");
+ if(clock!=0&clock%1500==0&clock/1500=a){
+   time-=15;
+   enemies[i].hp*2;
+   alert("Level "+a+"!!");
   }
  if(clock%time===0){
     var newEnemy= new Enemy();
