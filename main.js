@@ -182,7 +182,7 @@ function draw(){
  ctx.fillText("hp="+treeHp,20,28);
  ctx.fillText("score="+score,20,60);
  ctx.fillText("money="+money,20,92);
- if(clock%10000==0){
+ if(clock%1000==0){
    time+=20;
    Enemy.hp*2;
   }
